@@ -362,7 +362,7 @@ body {
         align-items: center;
         padding: 0 20px;
     }
-
+    
     .contact-info,
     .qr-code,
     .social-links {
@@ -401,94 +401,120 @@ body {
 }
 
 
-        /* Дополнительные стили для этой страницы */
-        .main-container {
-            display: flex;
+
+
+        {
+            --primary: #bdff00;
+            --dark: #000000;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Onest', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff; /* Белый фон для основного контента */
-            color: #333;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 0 20px;
         }
-
-        .sidebar {
-            width: 250px;
-            padding: 20px;
+        
+        /* Шапка */
+        header {
+            background: var(--dark);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar a {
-            color: #004085;
+        
+        .logo {
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            display: block;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            color: var(--light);
         }
-
-        .sidebar a:hover {
-            background-color: #f0f0f0;
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
         }
-
-        .content {
-            flex: 1; /* Занимает все доступное пространство */
-            padding: 20px;
-            border-left: 1px solid #ddd; /* Разделительная линия */
+        
+        /* Основной контент */
+        .program-hero {
+            background: var(--dark);
+            color: var(--light);
+            padding: 80px 0;
+            text-align: center;
         }
-
-        .content h2 {
-            text-align: left;
-            margin-bottom: 30px;
-            color: #000;
-            font-size: 2em;
+        
+        .program-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
-
-        .content h3 {
-            color: #004085;
-            margin-bottom: 10px;
-            font-size: 1.3em;
+        
+        .features {
+            padding: 60px 0;
         }
-
-        .content p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-
-        /* Обновленные стили для нумерованных особенностей */
-        .feature {
+        
+        .feature-card {
+            background: var(--gray);
+            border-radius: 10px;
+            padding: 30px;
             margin-bottom: 30px;
         }
-
-        /* Убираем позиционирование номера */
-        .feature::before {
-            content: none; /* Убираем номер */
+        
+        .feature-card h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
         }
-
+        
+        .feature-card p {
+            margin-bottom: 15px;
+        }
+        
+        .feature-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card li {
+            margin-bottom: 8px;
+        }
+        
+        /* Подвал */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
         /* Адаптивность */
         @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column; /* Вертикальное расположение на маленьких экранах */
-                padding: 10px;
+            .program-hero h1 {
+                font-size: 2rem;
             }
-            .sidebar {
-                width: 100%;
-                padding: 10px;
-                border-bottom: 1px solid #ddd; /* Разделительная линия */
-            }
-
-            .content {
-                padding: 10px;
-                border-left: none; /* Убираем разделительную линию */
+            
+            .feature-card {
+                padding: 20px;
             }
         }
